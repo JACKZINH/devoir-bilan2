@@ -8,7 +8,7 @@ import "../assets/styles/header.css";
 const Header = () => {
   return (
     <nav
-      className="navbar navbar-expand-md navbar-light shadow"
+      className="navbar navbar-expand-md navbar-light shadow px-5"
       style={{ backgroundColor: "#f1f8fc" }}>
       <div className="container-fluid">
         {/* Logo */}
