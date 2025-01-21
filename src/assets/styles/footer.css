@@ -1,0 +1,17 @@
+.footer-col-left {
+  /* Par défaut (mobile) : pas de bordure verticale */
+  border-right: none;
+}
+
+/* À partir de 768px (tablette + desktop) */
+@media (min-width: 768px) {
+  .footer-col-left {
+    border-right: 1px solid #fff;
+    padding-right: 1rem;
+  }
+}
+
+footer {
+  font-family: Graphik, sans-serif;
+  font-weight: 400;
+}
