@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,9 +10,25 @@ import {
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 
 const Artisanlist = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const category = queryParams.get("category");
+
   const [specialtyFilter, setSpecialtyFilter] = useState("");
   const [noteFilter, setNoteFilter] = useState("");
-  const [filteredArtisans, setFilteredArtisans] = useState(artisansData);
+  const [filteredArtisans, setFilteredArtisans] = useState([]);
+
+  useEffect(() => {
+    let filtered = artisansData;
+
+    if (category) {
+      filtered = filtered.filter(
+        (artisan) => artisan.category.toLowerCase() === category.toLowerCase()
+      );
+    }
+
+    setFilteredArtisans(filtered);
+  }, [category]);
 
   const renderStars = (note) => {
     const fullStars = Math.floor(note);
@@ -134,7 +151,7 @@ const Artisanlist = () => {
               }}>
               <div className="card-body">
                 <h5 className="card-title">{artisan.name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
+                <h6 className="card-subtitle mb-2" style={{ color: "#82b864" }}>
                   {artisan.specialty}
                 </h6>
                 <p className="card-text">

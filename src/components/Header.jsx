@@ -38,22 +38,30 @@ const Header = () => {
           {/* Menu de gauche */}
           <ul className="navbar-nav mx-auto mb-2 mb-md-0 d-flex justify-content-center gap-4">
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/batiment">
+              <Link
+                className="nav-link text-dark"
+                to="/artisanlist?category=batiment">
                 Bâtiment
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/services">
+              <Link
+                className="nav-link text-dark"
+                to="/artisanlist?category=services">
                 Services
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/fabrication">
+              <Link
+                className="nav-link text-dark"
+                to="/artisanlist?category=fabrication">
                 Fabrication
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/alimentation">
+              <Link
+                className="nav-link text-dark"
+                to="/artisanlist?category=alimentation">
                 Alimentation
               </Link>
             </li>
