@@ -3,9 +3,7 @@ import "../assets/styles/footer.css";
 
 function Footer() {
   return (
-    <footer
-      className=" text-white py-4 fixed-bottom"
-      style={{ backgroundColor: "#0074C7" }}>
+    <footer className=" text-white py-4" style={{ backgroundColor: "#0074C7" }}>
       <div className="container">
         <div className="row">
           {/* Colonne GAUCHE (adresse) */}

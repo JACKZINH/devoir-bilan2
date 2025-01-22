@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Artisandetails from "./pages/Artisandetails";
 import Artisanlist from "./pages/Artisanlist";
 import Error from "./pages/Error";
-import "./assets/styles/global.scss";
+import "./assets/styles/global.css";
 
 function App() {
   return (

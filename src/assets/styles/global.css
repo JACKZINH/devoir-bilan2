@@ -54,12 +54,8 @@
   font-style: normal;
 }
 
-/* Appliquer la police globalement */
-body {
-  font-family: "Graphik", sans-serif;
-  font-weight: 400; /* Regular */
-  line-height: 1.6;
+* {
+  font-family: "Graphik";
   margin: 0;
   padding: 0;
-  color: #333; /* Exemple de couleur par défaut */
 }
