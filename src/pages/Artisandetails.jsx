@@ -9,8 +9,6 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
-
-/* Import de ta feuille ArtisanDetails.css */
 import "../assets/styles/artisandetails.css";
 
 const Artisandetails = () => {
