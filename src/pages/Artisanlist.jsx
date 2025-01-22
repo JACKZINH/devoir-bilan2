@@ -153,11 +153,11 @@ const Artisanlist = () => {
                   color: "#0074C7",
                 }}>
                 <div className="card-body">
-                  <h5 className="card-title">{artisan.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
+                  <h5 className="card-title fw-bold">{artisan.name}</h5>
+                  <h6 className="card-subtitle mb-2" style={{ color: "black" }}>
                     {artisan.specialty}
                   </h6>
-                  <p className="card-text">
+                  <p className="card-text" style={{ color: "black" }}>
                     <strong>Note:</strong>{" "}
                     {renderStars(parseFloat(artisan.note))} <br />
                     <strong>Localisation:</strong> {artisan.location}{" "}
