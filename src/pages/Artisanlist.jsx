@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -142,36 +142,40 @@ const Artisanlist = () => {
       <div className="row">
         {filteredArtisans.map((artisan) => (
           <div className="col-md-4 mb-4" key={artisan.id}>
-            <div
-              className="card"
-              style={{
-                backgroundColor: "#F1F8FC",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                color: "#0074C7",
-              }}>
-              <div className="card-body">
-                <h5 className="card-title">{artisan.name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  {artisan.specialty}
-                </h6>
-                <p className="card-text">
-                  <strong>Note:</strong> {renderStars(parseFloat(artisan.note))}{" "}
-                  <br />
-                  <strong>Localisation:</strong> {artisan.location}{" "}
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      artisan.location + ", France"
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <FontAwesomeIcon
-                      icon={faMapMarkerAlt}
-                      className="text-danger"
-                    />
-                  </a>
-                </p>
+            <Link
+              to={`/artisandetails/${artisan.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}>
+              <div
+                className="card"
+                style={{
+                  backgroundColor: "#F1F8FC",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                  color: "#0074C7",
+                }}>
+                <div className="card-body">
+                  <h5 className="card-title">{artisan.name}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    {artisan.specialty}
+                  </h6>
+                  <p className="card-text">
+                    <strong>Note:</strong>{" "}
+                    {renderStars(parseFloat(artisan.note))} <br />
+                    <strong>Localisation:</strong> {artisan.location}{" "}
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        artisan.location + ", France"
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FontAwesomeIcon
+                        icon={faMapMarkerAlt}
+                        className="text-danger"
+                      />
+                    </a>
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

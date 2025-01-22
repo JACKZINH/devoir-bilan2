@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/artisanlist" element={<Artisanlist />} />
-        <Route path="/artisandetails" element={<Artisandetails />} />
+        <Route path="/artisandetails/:id" element={<Artisandetails />} />
         <Route path="*" element={<Error />} /> {/* Route catch-all */}
       </Routes>
       <Footer />

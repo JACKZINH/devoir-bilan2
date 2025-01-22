@@ -1,0 +1,13 @@
+/* ArtisanDetails.css */
+
+/* Par défaut (mobile), on n’a PAS de bordure verticale */
+.border-md-right {
+  border-right: none;
+}
+
+/* À partir de 768px (tablette et desktop), on applique la bordure verticale */
+@media (min-width: 768px) {
+  .border-md-right {
+    border-right: 1px solid #e0e0e0;
+  }
+}
