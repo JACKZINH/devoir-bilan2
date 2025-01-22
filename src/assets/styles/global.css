@@ -55,7 +55,7 @@
 }
 
 * {
-  font-family: "Graphik";
+  font-family: "Graphik", sans-serif;
   margin: 0;
   padding: 0;
 }
