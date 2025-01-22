@@ -151,7 +151,7 @@ const Artisanlist = () => {
               }}>
               <div className="card-body">
                 <h5 className="card-title">{artisan.name}</h5>
-                <h6 className="card-subtitle mb-2" style={{ color: "#82b864" }}>
+                <h6 className="card-subtitle mb-2 text-muted">
                   {artisan.specialty}
                 </h6>
                 <p className="card-text">
