@@ -81,16 +81,16 @@ const Artisandetails = () => {
               border-md-right
             ">
             <h5 className="fw-bold">Nom de l'artisan :</h5>
-            <p>{artisan.name}</p>
+            <p style={{ color: "black" }}>{artisan.name}</p>
 
             <h5 className="fw-bold">Note :</h5>
             <p>{renderStars(parseFloat(artisan.note))}</p>
 
             <h5 className="fw-bold">Spécialité :</h5>
-            <p>{artisan.specialty}</p>
+            <p style={{ color: "black" }}>{artisan.specialty}</p>
 
             <h5 className="fw-bold">Localisation :</h5>
-            <p>
+            <p style={{ color: "black" }}>
               {artisan.location}, France{" "}
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -106,7 +106,7 @@ const Artisandetails = () => {
             </p>
 
             <h5 className="fw-bold">À propos :</h5>
-            <p>{artisan.about}</p>
+            <p style={{ color: "black" }}>{artisan.about}</p>
 
             {artisan.website && (
               <p className="mt-3">
@@ -116,7 +116,7 @@ const Artisandetails = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-decoration-none"
-                  style={{ color: "#0074C7" }}>
+                  style={{ color: "black" }}>
                   {artisan.website}{" "}
                   <FontAwesomeIcon icon={faGlobe} className="ms-1" />
                 </a>
