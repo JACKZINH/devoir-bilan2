@@ -1,14 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/img/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../assets/styles/header.css";
 
 const Header = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/artisanlist?search=${encodeURIComponent(searchQuery)}`);
+  };
+
   return (
     <nav
-      className="navbar navbar-expand-md navbar-light shadow px-5"
+      // On passe de "navbar-expand-md" à "navbar-expand-lg"
+      className="navbar navbar-expand-lg navbar-light shadow px-5"
       style={{ backgroundColor: "#f1f8fc" }}>
       <div className="container-fluid">
         {/* Logo */}
@@ -20,7 +33,7 @@ const Header = () => {
           />
         </Link>
 
-        {/* Bouton burger (Bootstrap) */}
+        {/* Bouton burger (visible <992px, caché >=992px) */}
         <button
           className="navbar-toggler"
           type="button"
@@ -33,10 +46,10 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Contenu qui se replie (menu + recherche) */}
+        {/* Le bloc qui se replie/étend */}
         <div className="collapse navbar-collapse" id="navbarContent">
-          {/* Menu de gauche */}
-          <ul className="navbar-nav mx-auto mb-2 mb-md-0 d-flex justify-content-center gap-4">
+          {/* Menu */}
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 d-flex justify-content-center gap-4">
             <li className="nav-item">
               <Link
                 className="nav-link text-dark"
@@ -67,37 +80,35 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* Recherche (input group) */}
-          <form className="d-flex">
+          {/* Barre de recherche */}
+          <form
+            className="row my-2 my-lg-0 align-items-center"
+            onSubmit={handleSearchSubmit}>
+            {/* On crée une “col-12 col-lg-3” pour que la barre prenne 
+      100% sur mobile/tablette, et ~25% en desktop */}
             <div
-              className="input-group"
-              style={{
-                borderBottom: "1px solid #0074c7",
-                borderRight: "1px solid #0074c7",
-              }}>
+              className="
+      col-12 col-lg-3
+      input-group
+      border-1 border-bottom border-end border-primary
+      rounded-0
+    ">
               <input
                 type="text"
-                className="form-control"
+                className="form-control border-0 bg-transparent"
                 placeholder="Rechercher..."
                 aria-label="Search"
-                style={{
-                  border: "none",
-                  boxShadow: "none",
-                  borderRadius: 0,
-                  backgroundColor: " #f1f8fc",
-                }}
+                value={searchQuery}
+                onChange={handleSearchChange}
               />
-              <span
-                className="input-group-text"
-                style={{
-                  border: "none",
-                  background: "none",
-                }}>
+              <button
+                type="submit"
+                className="input-group-text border-0 bg-transparent">
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  style={{ color: "#0074c7" }}
+                  className="text-primary"
                 />
-              </span>
+              </button>
             </div>
           </form>
         </div>

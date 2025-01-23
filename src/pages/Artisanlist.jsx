@@ -13,6 +13,7 @@ const Artisanlist = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
+  const searchQuery = queryParams.get("search");
 
   const [specialtyFilter, setSpecialtyFilter] = useState("");
   const [noteFilter, setNoteFilter] = useState("");
@@ -27,8 +28,17 @@ const Artisanlist = () => {
       );
     }
 
+    if (searchQuery) {
+      filtered = filtered.filter(
+        (artisan) =>
+          artisan.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          artisan.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          artisan.specialty.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
     setFilteredArtisans(filtered);
-  }, [category]);
+  }, [category, searchQuery]);
 
   const renderStars = (note) => {
     const fullStars = Math.floor(note);
@@ -153,8 +163,10 @@ const Artisanlist = () => {
                   color: "#0074C7",
                 }}>
                 <div className="card-body">
-                  <h5 className="card-title fw-bold">{artisan.name}</h5>
-                  <h6 className="card-subtitle mb-2" style={{ color: "black" }}>
+                  <h5 className="card-title">{artisan.name}</h5>
+                  <h6
+                    className="card-subtitle mb-2 text-muted"
+                    style={{ color: "black" }}>
                     {artisan.specialty}
                   </h6>
                   <p className="card-text" style={{ color: "black" }}>
