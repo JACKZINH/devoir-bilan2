@@ -16,10 +16,17 @@ function Footer() {
             ">
             <h5 className="fw-bold">Lyon</h5>
             <p className="mb-1">
-              101 cours Charlemagne CS 20033
-              <br />
-              69269 LYON CEDEX 02 France
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=101%20cours%20Charlemagne%20CS%2020033%2069269%20LYON%20CEDEX%2002%20France"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-decoration-none">
+                101 cours Charlemagne CS 20033
+                <br />
+                69269 LYON CEDEX 02 France
+              </a>
             </p>
+
             <p className="mb-1">
               <span role="img" aria-label="phone">
                 📞
