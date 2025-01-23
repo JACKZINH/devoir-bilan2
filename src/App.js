@@ -9,16 +9,18 @@ import "./assets/styles/global.css";
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/artisanlist" element={<Artisanlist />} />
-        <Route path="/artisandetails/:id" element={<Artisandetails />} />
-        <Route path="*" element={<Error />} /> {/* Route catch-all */}
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/artisanlist" element={<Artisanlist />} />
+          <Route path="/artisandetails/:id" element={<Artisandetails />} />
+          <Route path="*" element={<Error />} /> {/* Route catch-all */}
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

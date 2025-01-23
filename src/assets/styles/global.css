@@ -59,3 +59,21 @@
   margin: 0;
   padding: 0;
 }
+
+/* Conteneur principal de l'application */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Assure que le conteneur couvre toute la hauteur de la fenêtre */
+}
+
+/* Contenu principal de l'application */
+.main-content {
+  flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+  padding: 20px; /* Ajoute des marges internes */
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0; /* Empêche le footer de rétrécir */
+}
