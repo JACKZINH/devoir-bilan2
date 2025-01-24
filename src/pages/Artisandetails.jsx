@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
