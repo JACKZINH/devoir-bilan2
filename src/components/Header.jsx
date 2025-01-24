@@ -20,7 +20,6 @@ const Header = () => {
 
   return (
     <nav
-      // On passe de "navbar-expand-md" à "navbar-expand-lg"
       className="navbar navbar-expand-lg navbar-light shadow px-5"
       style={{ backgroundColor: "#f1f8fc" }}>
       <div className="container-fluid">
@@ -84,8 +83,6 @@ const Header = () => {
           <form
             className="row my-2 my-lg-0 align-items-center"
             onSubmit={handleSearchSubmit}>
-            {/* On crée une “col-12 col-lg-3” pour que la barre prenne 
-      100% sur mobile/tablette, et ~25% en desktop */}
             <div
               className="
       col-12 col-lg-3
