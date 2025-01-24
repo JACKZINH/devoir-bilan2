@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -84,6 +85,13 @@ const Artisandetails = () => {
 
   return (
     <div className="container my-5">
+      <Helmet>
+        <title>Détails de l'artisan</title>
+        <meta
+          name="description"
+          content={`Détails de l'artisan ${artisan.name}, spécialisé en ${artisan.specialty}.`}
+        />
+      </Helmet>
       {/* Titre principal */}
       <h1 className="text-center mb-4 fw-bold" style={{ color: "#0074C7" }}>
         Détails de l'artisan

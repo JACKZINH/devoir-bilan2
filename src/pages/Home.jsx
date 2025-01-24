@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -50,6 +51,13 @@ function Home() {
 
   return (
     <div className="container my-5">
+      <Helmet>
+        <title>Accueil - Trouve ton artisan</title>
+        <meta
+          name="description"
+          content="Bienvenue sur Trouve ton artisan. Trouvez les meilleurs artisans près de chez vous."
+        />
+      </Helmet>
       {/* Titre principal */}
       <h1 className="text-center fw-bold" style={{ color: "#0074C7" }}>
         Bienvenue sur “Trouve ton artisan”
