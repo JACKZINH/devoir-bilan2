@@ -20,7 +20,6 @@ const Artisandetails = () => {
     subject: "",
     message: "",
   });
-  const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
@@ -33,14 +32,7 @@ const Artisandetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, subject, message } = formState;
 
-    if (!name || !subject || !message) {
-      setErrorMessage("Tous les champs doivent être remplis.");
-      return;
-    }
-
-    setErrorMessage("");
     setSuccessMessage(`L'email a bien été envoyé à ${artisan.email}`);
     // Réinitialiser le formulaire
     setFormState({
@@ -211,9 +203,6 @@ const Artisandetails = () => {
                   required
                 />
               </div>
-              {errorMessage && (
-                <div className="alert alert-danger">{errorMessage}</div>
-              )}
               {successMessage && (
                 <div className="alert alert-success">{successMessage}</div>
               )}
