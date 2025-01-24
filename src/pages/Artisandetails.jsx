@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import artisansData from "../assets/data/datas.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +14,41 @@ import "../assets/styles/artisandetails.css";
 const Artisandetails = () => {
   const { id } = useParams();
   const artisan = artisansData.find((a) => a.id === id);
+
+  const [formState, setFormState] = useState({
+    name: "",
+    subject: "",
+    message: "",
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, subject, message } = formState;
+
+    if (!name || !subject || !message) {
+      setErrorMessage("Tous les champs doivent être remplis.");
+      return;
+    }
+
+    setErrorMessage("");
+    setSuccessMessage(`L'email a bien été envoyé à ${artisan.email}`);
+    // Réinitialiser le formulaire
+    setFormState({
+      name: "",
+      subject: "",
+      message: "",
+    });
+  };
 
   if (!artisan) {
     return (
@@ -133,7 +168,7 @@ const Artisandetails = () => {
           {/* Colonne DROITE (formulaire) */}
           <div className="col-12 col-md-6">
             <h5 className="fw-bold mb-3">Formulaire de contact :</h5>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label fw-bold">
                   Nom :
@@ -143,6 +178,8 @@ const Artisandetails = () => {
                   className="form-control"
                   id="name"
                   placeholder="Votre nom complet"
+                  value={formState.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -155,6 +192,8 @@ const Artisandetails = () => {
                   className="form-control"
                   id="subject"
                   placeholder="Objet de votre message"
+                  value={formState.subject}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -167,9 +206,17 @@ const Artisandetails = () => {
                   id="message"
                   rows="3"
                   placeholder="Votre message ici"
+                  value={formState.message}
+                  onChange={handleChange}
                   required
                 />
               </div>
+              {errorMessage && (
+                <div className="alert alert-danger">{errorMessage}</div>
+              )}
+              {successMessage && (
+                <div className="alert alert-success">{successMessage}</div>
+              )}
               <button type="submit" className="btn btn-primary">
                 Envoyer
               </button>
