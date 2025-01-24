@@ -181,17 +181,10 @@ const Artisanlist = () => {
                     <strong>Note:</strong>{" "}
                     {renderStars(parseFloat(artisan.note))} <br />
                     <strong>Localisation:</strong> {artisan.location}{" "}
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                        artisan.location + ", France"
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <FontAwesomeIcon
-                        icon={faMapMarkerAlt}
-                        className="text-danger"
-                      />
-                    </a>
+                    <FontAwesomeIcon
+                      icon={faMapMarkerAlt}
+                      className="text-danger"
+                    />
                   </p>
                 </div>
               </div>
