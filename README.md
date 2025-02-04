@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 📌 Trouve Ton Artisan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Trouve Ton Artisan** est une application web permettant aux utilisateurs de rechercher et contacter des artisans selon leur spécialité et leur localisation.  
+L'application intègre une barre de recherche dynamique, des filtres avancés et une interface intuitive.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Fonctionnalités principales
 
-### `npm start`
+- 🔍 **Recherche dynamique** : Filtrage instantané des artisans en fonction des mots-clés saisis.
+- ⭐ **Système de notation avec étoiles dynamiques** : Affichage visuel des notes attribuées aux artisans.
+- 🎯 **Filtres avancés** : Recherche par **catégorie** (bâtiment, services, fabrication) et **note minimale**.
+- 📄 **Fiche détaillée des artisans** : Informations complètes sur chaque artisan (spécialité, localisation, contact).
+- 📨 **Formulaire de contact** : Permet aux utilisateurs d'envoyer un message directement à un artisan.
+- 🏆 **Mise en avant des artisans populaires** : Affichage des artisans les mieux notés sur la page d’accueil.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Technologies utilisées
 
-### `npm test`
+- ⚛️ **React.js** - Bibliothèque JavaScript pour construire l'interface utilisateur.
+- 🏗️ **React Helmet** - Gestion du SEO et des balises meta.
+- 🛣️ **React Router** - Gestion de la navigation entre les pages.
+- 🎨 **Bootstrap** - Framework CSS pour le style et la mise en page.
+- 🖼️ **FontAwesome** - Icônes utilisées pour la notation et l’affichage dynamique.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Installation et exécution du projet
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔧 Prérequis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Avant d'installer l'application, assure-toi d'avoir installé **Node.js** et **npm** (ou **yarn**).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🛠️ Étapes d'installation
 
-### `npm run eject`
+### 1️⃣ Cloner le projet
+```bash
+git clone https://github.com/JACKZINH/devoir-bilan2.git
+cd devoir-bilan2
+```
+### 2️⃣ Installer les dépendances  
+**Avec npm :**  
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Ou avec Yarn :**  
+```bash
+yarn install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3️⃣ Lancer l’application en mode développement  
+**Avec npm :**  
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Ou avec Yarn :**  
+```bash
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 4️⃣ Accéder à l’application  
+Une fois le serveur lancé, ouvre un navigateur et rends-toi sur :  
+👉 [http://localhost:3000](http://localhost:3000)
